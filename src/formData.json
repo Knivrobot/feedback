@@ -1,0 +1,60 @@
+{
+  "id": 1,
+  "title": "Vad tyckte du om ditt veterinärbesök?",
+  "description": "zdasdfasf sadf asdf asdfa sd",
+  "fields": [
+    {
+      "id": 2,
+      "type": "radio",
+      "title": "Kände du att veterinären förstod och tog upp ditt husdjurs behov?",
+      "slug": "the_veterinarian",
+      "options": [
+        { "id": 1, "value": "Instämmer helt" },
+        { "id": 2, "value": "Instämmer delvis" },
+        { "id": 3, "value": "Instämmer inte alls" }
+      ],
+      "required": true
+    },
+    {
+      "id": 3,
+      "type": "checkbox",
+      "title": "Vilka påståenden tycker du stämmer på mottagningen?",
+      "slug": "the_reception",
+      "options": [
+        { "id": 1, "value": "Rent och prydligt intryck" },
+        { "id": 2, "value": "Lätt att hitta till" },
+        { "id": 3, "value": "Trevligt personal" },
+        { "id": 4, "value": "Bra utbud av produkter" }
+      ],
+      "required": false
+    },
+    {
+      "id": 4,
+      "type": "grade",
+      "title": "Hur troligt är det att du återvänder till vårt sjukhus för veterinärvård?",
+      "slug": "revisit",
+      "options": [
+        { "id": 1, "value": 1 },
+        { "id": 2, "value": 2 },
+        { "id": 3, "value": 3 },
+        { "id": 4, "value": 4 },
+        { "id": 5, "value": 5 }
+      ],
+      "required": true
+    },
+    {
+      "id": 5,
+      "type": "textarea",
+      "title": "Berätta mer om ditt besök",
+      "slug": "experience",
+      "placeholder": "asd",
+      "required": false
+    },
+    {
+      "id": 6,
+      "type": "submit",
+      "title": "Skicka",
+      "slug": ""
+    }
+  ]
+}

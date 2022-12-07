@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@tailwind variants;
+
+body {
+  background-color: #f8ecdd;
+  padding: 20px 20px 100px;
+  font-size: 16px;
+}
+
+@media screen and (max-width: 1000px) {
+  body {
+    padding: 5px 5px 50px;
+  }
+}
