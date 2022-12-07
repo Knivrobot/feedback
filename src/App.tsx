@@ -29,7 +29,6 @@ function Survey() {
           setFormContent={setFormContent}
         />
       )}
-      Hohoho23
     </div>
   );
 }
