@@ -22,7 +22,7 @@ function Confirmation({ formBlueprint, formContent, setFormContent }: Props) {
                     if (field.type === "grade") {
                       return (
                         <div>
-                          {item} av {field?.options?.length}
+                          {item} / {field?.options?.length}
                         </div>
                       );
                     } else {
