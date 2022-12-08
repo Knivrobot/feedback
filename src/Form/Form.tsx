@@ -16,6 +16,16 @@ type Props = {
 
 function Form({ formData, onSubmit, sending }: Props) {
   const formRef = useRef<HTMLFormElement>(null);
+
+  formRef?.current?.addEventListener(
+    "focus",
+    function (e) {
+      const target = e.target as HTMLFormElement;
+      target?.scrollIntoView();
+    },
+    true
+  );
+
   return (
     <form
       ref={formRef}
