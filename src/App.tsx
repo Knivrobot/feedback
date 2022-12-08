@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Form from "./Form/Form";
-import formBlueprint from "./Form/formBluePrint.json";
+import formBlueprint from "./formBluePrint.json";
 import Confirmation from "./Form/Confirmation";
 
 function App() {
