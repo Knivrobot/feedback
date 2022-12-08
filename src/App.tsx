@@ -3,7 +3,7 @@ import Form from "./Form/Form";
 import formBlueprint from "./Form/formBluePrint.json";
 import Confirmation from "./Form/Confirmation";
 
-function Survey() {
+function App() {
   const [formContent, setFormContent] = useState<FormData | undefined>();
   const [sending, setSending] = useState(false);
 
@@ -17,7 +17,7 @@ function Survey() {
   };
 
   return (
-    <div className="p-5 max-w-2xl mx-auto bg-white rounded-xl md:p-10">
+    <div className="p-6 py-8 max-w-2xl mx-auto bg-white rounded-xl md:p-10">
       {formContent === undefined ? (
         <Form
           formBlueprint={formBlueprint}
@@ -35,4 +35,4 @@ function Survey() {
   );
 }
 
-export default Survey;
+export default App;

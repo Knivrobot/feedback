@@ -19,15 +19,15 @@
     },
     {
       "id": 3,
-      "slug": "the_reception",
+      "slug": "the_app",
       "type": "checkbox",
       "order": 2,
-      "title": "Vilka påståenden tycker du stämmer på mottagningen?",
+      "title": "Vilka påståenden tycker du stämmer på appen?",
       "options": [
-        { "id": 1, "value": "Rent och prydligt intryck" },
-        { "id": 2, "value": "Lätt att hitta till" },
-        { "id": 3, "value": "Trevligt personal" },
-        { "id": 4, "value": "Bra utbud av produkter" }
+        { "id": 1, "value": "Enkel att hitta och ladda ned" },
+        { "id": 2, "value": "Enkel att använda" },
+        { "id": 3, "value": "Snygg design" },
+        { "id": 4, "value": "Fri från buggar och fel" }
       ],
       "required": false,
       "error": "Välj minst ett av följande alternativ"
@@ -37,7 +37,7 @@
       "slug": "revisit",
       "type": "grade",
       "order": 3,
-      "title": "Hur troligt är det att du återvänder till vårt sjukhus för veterinärvård?",
+      "title": "Hur troligt är det att du återvänder till vår tjänst för veterinärvård?",
       "options": [
         { "id": 1, "value": 1 },
         { "id": 2, "value": 2 },
@@ -53,7 +53,7 @@
       "slug": "experience",
       "type": "textarea",
       "order": 4,
-      "title": "Berätta mer om ditt besök",
+      "title": "Berätta mer om din upplevelse",
       "placeholder": "Berätta gärna om din upplevelse",
       "required": false,
       "error": "Du måste fylla i detta fält"

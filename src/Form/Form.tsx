@@ -41,7 +41,7 @@ function Form({ formBlueprint, onSubmit, sending }: Props) {
       noValidate
       className="group/form"
     >
-      <h2 className="text-2xl font-semibold">{formBlueprint.title}</h2>
+      <h2 className="text-2xl font-bold">{formBlueprint.title}</h2>
 
       <div className="grid items-center gap-5 mt-8">
         {formBlueprint.fields.map((field) => {
