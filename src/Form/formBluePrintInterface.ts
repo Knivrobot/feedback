@@ -2,6 +2,8 @@ export interface Form {
   id: number;
   title: string;
   error?: string;
+  success?: string;
+  resetButtonText?: string;
   fields: FormFields[];
 }
 

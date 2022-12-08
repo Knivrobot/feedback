@@ -1,14 +1,16 @@
 {
   "id": 1,
-  "title": "Vad tyckte du om ditt veterinärbesök?",
+  "title": "Hur upplevde ni ert veterinärbesök?",
   "error": "Det verkar som ett eller flera obligatoriska fält inte är ifyllda",
+  "success": "Tack för din feedback, nu kan du stänga denna sida.",
+  "resetButtonText": "Återställ formuläret",
   "fields": [
     {
       "id": 2,
       "slug": "the_veterinarian",
       "type": "radio",
       "order": 1,
-      "title": "Kände du att veterinären förstod och tog upp ditt husdjurs behov?",
+      "title": "Tycker du att veterinären förstod och tog upp ditt husdjurs behov?",
       "options": [
         { "id": 1, "value": "Instämmer helt" },
         { "id": 2, "value": "Instämmer delvis" },
@@ -26,7 +28,7 @@
       "options": [
         { "id": 1, "value": "Enkel att hitta och ladda ned" },
         { "id": 2, "value": "Enkel att använda" },
-        { "id": 3, "value": "Snygg design" },
+        { "id": 3, "value": "Snygg och modern design" },
         { "id": 4, "value": "Fri från buggar och fel" }
       ],
       "required": false,
@@ -37,7 +39,7 @@
       "slug": "revisit",
       "type": "grade",
       "order": 3,
-      "title": "Hur troligt är det att du återvänder till vår tjänst för veterinärvård?",
+      "title": "Hur troligt är det att du återvänder till vår tjänst i framtiden?",
       "options": [
         { "id": 1, "value": 1 },
         { "id": 2, "value": 2 },
@@ -54,7 +56,7 @@
       "type": "textarea",
       "order": 4,
       "title": "Berätta mer om din upplevelse",
-      "placeholder": "Berätta gärna om din upplevelse",
+      "placeholder": "Beskriv de som var bra, men också de som var mindre bra",
       "required": false,
       "error": "Du måste fylla i detta fält"
     },

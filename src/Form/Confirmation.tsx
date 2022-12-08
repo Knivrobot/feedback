@@ -15,7 +15,7 @@ function Confirmation({ formBlueprint, formContent, setFormContent }: Props) {
           const value = formContent?.getAll(field.slug) as unknown as string[];
           if (value?.join() !== "") {
             return (
-              <div>
+              <div key={field.id}>
                 <div className="font-semibold text-lg">{field.title}</div>
                 <div>
                   {value?.map((item) => {
@@ -39,13 +39,13 @@ function Confirmation({ formBlueprint, formContent, setFormContent }: Props) {
       </div>
       <div className="mt-10">
         <div className="py-5 mb-5 text-center rounded bg-green-100">
-          Tack för din feedback, nu kan du stänga denna sida.
+          {formBlueprint.success}
         </div>
         <button
           className="w-full flex appearance-none items-center justify-center  bg-white border border-gray-300 hover:bg-gray-50 focus:ring-4 focus:ring-blue-600 font-medium rounded-lg text-lg px-5 py-3 text-center mr-2 "
           onClick={() => setFormContent(undefined)}
         >
-          Återställ formuläret{" "}
+          {formBlueprint.resetButtonText}{" "}
           <svg
             width="20"
             height="21"
