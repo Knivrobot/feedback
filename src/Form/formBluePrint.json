@@ -1,11 +1,12 @@
 {
   "id": 1,
   "title": "Vad tyckte du om ditt veterinärbesök?",
-  "description": "zdasdfasf sadf asdf asdfa sd",
+  "error": "Det verkar som ett eller flera obligatoriska fält inte är ifyllda",
   "fields": [
     {
       "id": 2,
       "type": "radio",
+      "order": 1,
       "title": "Kände du att veterinären förstod och tog upp ditt husdjurs behov?",
       "slug": "the_veterinarian",
       "options": [
@@ -13,11 +14,13 @@
         { "id": 2, "value": "Instämmer delvis" },
         { "id": 3, "value": "Instämmer inte alls" }
       ],
-      "required": true
+      "required": true,
+      "error": "Välj ett av följande alternativ"
     },
     {
       "id": 3,
       "type": "checkbox",
+      "order": 2,
       "title": "Vilka påståenden tycker du stämmer på mottagningen?",
       "slug": "the_reception",
       "options": [
@@ -26,11 +29,13 @@
         { "id": 3, "value": "Trevligt personal" },
         { "id": 4, "value": "Bra utbud av produkter" }
       ],
-      "required": false
+      "required": true,
+      "error": "Välj minst ett av följande alternativ"
     },
     {
       "id": 4,
       "type": "grade",
+      "order": 3,
       "title": "Hur troligt är det att du återvänder till vårt sjukhus för veterinärvård?",
       "slug": "revisit",
       "options": [
@@ -40,15 +45,18 @@
         { "id": 4, "value": 4 },
         { "id": 5, "value": 5 }
       ],
-      "required": true
+      "required": true,
+      "error": "Välj ett av följande alternativ"
     },
     {
       "id": 5,
       "type": "textarea",
+      "order": 4,
       "title": "Berätta mer om ditt besök",
       "slug": "experience",
-      "placeholder": "asd",
-      "required": false
+      "placeholder": "Berätta gärna om din upplevelse",
+      "required": true,
+      "error": "Du måste fylla i detta fält"
     },
     {
       "id": 6,

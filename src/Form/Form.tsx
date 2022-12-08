@@ -1,56 +1,88 @@
-import { useRef, FormEvent, ReactNode } from "react";
-import { Form as FormTypes } from "./formDataTypes";
+import { useRef, useState, ReactNode } from "react";
+import { Form as FormTypes } from "./formBluePrintInterface";
 import Radio from "./Radio";
 import CheckBox from "./CheckBox";
 import TextArea from "./TextArea";
 import Grade from "./Grade";
-
 import SubmitButton from "./SubmitButton";
 
 type Props = {
-  formData: FormTypes;
+  formBlueprint: FormTypes;
   children?: ReactNode;
   sending: boolean;
-  onSubmit: (e: FormEvent) => void;
+  onSubmit: (formValues: FormData) => void;
 };
 
-function Form({ formData, onSubmit, sending }: Props) {
+function Form({ formBlueprint, onSubmit, sending }: Props) {
   const formRef = useRef<HTMLFormElement>(null);
-
-  formRef?.current?.addEventListener(
-    "focus",
-    function (e) {
-      const target = e.target as HTMLFormElement;
-      target?.scrollIntoView();
-    },
-    true
+  const [invalidFields, setInvalidFields] = useState<(string | undefined)[]>(
+    []
   );
+  const invalidForm = invalidFields.length !== 0;
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    const target = e.target as HTMLFormElement;
+    const formValues = new FormData(target);
+    const invalidFields = findInvalidFields(formBlueprint, formValues);
+    setInvalidFields(invalidFields);
+    target.reportValidity();
+    if (target.checkValidity()) {
+      onSubmit(formValues);
+    }
+  };
 
   return (
     <form
       ref={formRef}
-      onSubmit={(e) => onSubmit(e)}
+      onSubmit={(e) => handleSubmit(e)}
       style={{ counterReset: "field-counter" }}
+      noValidate
+      className="group/form"
     >
-      <h2 className="text-2xl font-semibold">{formData.title}</h2>
+      <h2 className="text-2xl font-semibold">{formBlueprint.title}</h2>
 
       <div className="grid items-center gap-5 mt-8">
-        {formData.fields.map((field) => {
+        {formBlueprint.fields.map((field) => {
           switch (field.type) {
             case "radio":
-              return <Radio key={field.id} field={field} disabled={sending} />;
+              return (
+                <Radio
+                  key={field.id}
+                  field={field}
+                  disabled={sending}
+                  invalidFields={invalidFields}
+                />
+              );
 
             case "checkbox":
               return (
-                <CheckBox key={field.id} field={field} disabled={sending} />
+                <CheckBox
+                  key={field.id}
+                  field={field}
+                  disabled={sending}
+                  invalidFields={invalidFields}
+                />
               );
 
             case "grade":
-              return <Grade key={field.id} field={field} disabled={sending} />;
+              return (
+                <Grade
+                  key={field.id}
+                  field={field}
+                  disabled={sending}
+                  invalidFields={invalidFields}
+                />
+              );
 
             case "textarea":
               return (
-                <TextArea key={field.id} field={field} disabled={sending} />
+                <TextArea
+                  key={field.id}
+                  field={field}
+                  disabled={sending}
+                  invalidFields={invalidFields}
+                />
               );
 
             case "submit":
@@ -68,9 +100,30 @@ function Form({ formData, onSubmit, sending }: Props) {
           }
         })}
       </div>
-      <input name="formId" value={formData.id} type="hidden" />
+
+      {invalidForm && (
+        <div className="hidden group-invalid/form:block">
+          {formBlueprint.error}
+        </div>
+      )}
+      <input name="formId" value={formBlueprint.id} type="hidden" />
     </form>
   );
 }
 
 export default Form;
+
+const findInvalidFields = (
+  formBlueprint: FormTypes,
+  formValues: FormData
+): (string | undefined)[] => {
+  const result = formBlueprint?.fields
+    ?.map((field, index) => {
+      const value = formValues?.getAll(field.slug) as unknown as string[];
+      if (value?.join() === "" && field.required === true) {
+        return field.slug;
+      }
+    })
+    .filter((field) => field !== undefined && field !== "");
+  return result;
+};

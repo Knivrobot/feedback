@@ -1,20 +1,21 @@
-import { FormFields, Options } from "./formDataTypes";
+import { FormFields, Options } from "./formBluePrintInterface";
 type Props = {
   field: FormFields;
   disabled: boolean;
+  invalidFields: (string | undefined)[];
 };
 
-function Radio({ field, disabled }: Props) {
+function Radio({ field, disabled, invalidFields }: Props) {
   return (
-    <fieldset style={{ counterIncrement: "field-counter" }} disabled={disabled}>
-      <legend className="font-semibold text-lg before:inline-block before:pr-1 before:content-[counter(field-counter)'.']">
-        {field.title}
+    <fieldset className="group" disabled={disabled}>
+      <legend className="font-semibold text-lg">
+        {field.order}. {field.title}
       </legend>
 
       {field?.options?.map((option: Options) => {
         return (
           <label
-            key={field.slug + option.id}
+            key={option.id}
             className="flex align-middle border rounded-lg items-center cursor-pointer gap-x-2 p-3 mt-1 md:p-1 md:border-none md:mt-0"
           >
             <input
@@ -28,6 +29,11 @@ function Radio({ field, disabled }: Props) {
           </label>
         );
       })}
+      {invalidFields.includes(field.slug) && (
+        <div className="hidden text-pink-600 mt-2 px-2 py-1 border border-pink-300 bg-pink-50 rounded group-invalid:block">
+          {field.error}
+        </div>
+      )}
     </fieldset>
   );
 }
