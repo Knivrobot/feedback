@@ -9,6 +9,7 @@ function Survey() {
 
   const handleSubmit = (formValues: FormData) => {
     setSending(true);
+    /* Faking fetch */
     setTimeout(() => {
       setFormContent(formValues);
       setSending(false);

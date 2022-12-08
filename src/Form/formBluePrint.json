@@ -5,10 +5,10 @@
   "fields": [
     {
       "id": 2,
+      "slug": "the_veterinarian",
       "type": "radio",
       "order": 1,
       "title": "Kände du att veterinären förstod och tog upp ditt husdjurs behov?",
-      "slug": "the_veterinarian",
       "options": [
         { "id": 1, "value": "Instämmer helt" },
         { "id": 2, "value": "Instämmer delvis" },
@@ -19,25 +19,25 @@
     },
     {
       "id": 3,
+      "slug": "the_reception",
       "type": "checkbox",
       "order": 2,
       "title": "Vilka påståenden tycker du stämmer på mottagningen?",
-      "slug": "the_reception",
       "options": [
         { "id": 1, "value": "Rent och prydligt intryck" },
         { "id": 2, "value": "Lätt att hitta till" },
         { "id": 3, "value": "Trevligt personal" },
         { "id": 4, "value": "Bra utbud av produkter" }
       ],
-      "required": true,
+      "required": false,
       "error": "Välj minst ett av följande alternativ"
     },
     {
       "id": 4,
+      "slug": "revisit",
       "type": "grade",
       "order": 3,
       "title": "Hur troligt är det att du återvänder till vårt sjukhus för veterinärvård?",
-      "slug": "revisit",
       "options": [
         { "id": 1, "value": 1 },
         { "id": 2, "value": 2 },
@@ -50,19 +50,20 @@
     },
     {
       "id": 5,
+      "slug": "experience",
       "type": "textarea",
       "order": 4,
       "title": "Berätta mer om ditt besök",
-      "slug": "experience",
       "placeholder": "Berätta gärna om din upplevelse",
-      "required": true,
+      "required": false,
       "error": "Du måste fylla i detta fält"
     },
     {
       "id": 6,
+      "slug": "submit_button",
       "type": "submit",
       "title": "Skicka",
-      "slug": ""
+      "activeTitle": "Skickar..."
     }
   ]
 }

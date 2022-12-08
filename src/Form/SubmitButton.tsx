@@ -1,6 +1,6 @@
 type Props = {
   buttonText: string;
-  sendingText: string;
+  sendingText: string | undefined;
   sending: boolean;
 };
 

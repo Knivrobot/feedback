@@ -10,6 +10,7 @@ export interface FormFields {
   type: string;
   order?: number;
   title: string;
+  activeTitle?: string;
   slug: string;
   placeholder?: string;
   required?: boolean;

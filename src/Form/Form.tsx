@@ -18,7 +18,7 @@ function Form({ formBlueprint, onSubmit, sending }: Props) {
   const [invalidFields, setInvalidFields] = useState<(string | undefined)[]>(
     []
   );
-  const invalidForm = invalidFields.length !== 0;
+  const formIsNotValid = invalidFields.length !== 0;
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -26,6 +26,7 @@ function Form({ formBlueprint, onSubmit, sending }: Props) {
     const formValues = new FormData(target);
     const invalidFields = findInvalidFields(formBlueprint, formValues);
     setInvalidFields(invalidFields);
+    /* After custom validation manually initiate native validation */
     target.reportValidity();
     if (target.checkValidity()) {
       onSubmit(formValues);
@@ -91,7 +92,7 @@ function Form({ formBlueprint, onSubmit, sending }: Props) {
                   key={field.id}
                   sending={sending}
                   buttonText={field.title}
-                  sendingText="Skickar..."
+                  sendingText={field.activeTitle}
                 />
               );
 
@@ -101,8 +102,8 @@ function Form({ formBlueprint, onSubmit, sending }: Props) {
         })}
       </div>
 
-      {invalidForm && (
-        <div className="hidden group-invalid/form:block">
+      {formIsNotValid && (
+        <div className="hidden text-pink-600 p-3 text-center group-invalid/form:block">
           {formBlueprint.error}
         </div>
       )}
