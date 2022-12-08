@@ -42,7 +42,7 @@ function Form({ formBlueprint, onSubmit, sending }: Props) {
     >
       <h2 className="text-2xl font-bold">{formBlueprint.title}</h2>
 
-      <div className="grid items-center gap-5 mt-4 md:mt-8">
+      <div className="grid grid-cols-1 items-center gap-5 mt-4 md:mt-8">
         {formBlueprint.fields.map((field) => {
           switch (field.type) {
             case "radio":
