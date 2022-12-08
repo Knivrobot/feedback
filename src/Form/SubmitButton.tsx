@@ -8,7 +8,7 @@ function Form({ buttonText, sendingText, sending }: Props) {
   return (
     <button
       disabled={sending}
-      className="w-full flex items-center appearance-none justify-center text-white bg-blue-600 hover:bg-blue-800 focus:ring-4 focus:ring-blue-600 font-medium rounded-lg text-lg px-5 py-3  text-center mr-2   dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+      className="w-full flex items-center appearance-none justify-center text-white bg-blue-600 hover:bg-blue-800 focus:ring-4 focus:ring-blue-600 font-medium rounded-lg text-lg px-5 py-3  text-center mr-2"
     >
       {sending ? sendingText : buttonText}
       {sending ? (
