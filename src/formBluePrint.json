@@ -52,7 +52,7 @@
     },
     {
       "id": 5,
-      "slug": "experience",
+      "slug": "customer_experience",
       "type": "textarea",
       "order": 4,
       "title": "Berätta mer om din upplevelse",
