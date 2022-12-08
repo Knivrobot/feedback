@@ -1,0 +1,71 @@
+{
+  "id": 1,
+  "title": "How did you experience your veterinary visit?",
+  "error": "It appears that one or more required fields are not filled in",
+  "success": "Thank you for your feedback, you can now close this page.",
+  "resetButtonText": "Reset the form",
+  "fields": [
+    {
+      "id": 2,
+      "slug": "the_veterinarian",
+      "type": "radio",
+      "order": 1,
+      "title": "Do you think the vet understood and addressed your pet's needs?",
+      "options": [
+        { "id": 1, "value": "Totally agree" },
+        { "id": 2, "value": "Partially agree" },
+        { "id": 3, "value": "Disagree" }
+      ],
+      "required": true,
+      "error": "Choose one of the above options"
+    },
+    {
+      "id": 3,
+      "slug": "the_app",
+      "type": "checkbox",
+      "order": 2,
+      "title": "Which statements do you think are true about the app?",
+      "options": [
+        { "id": 1, "value": "Easy to find and download" },
+        { "id": 2, "value": "Easy to use" },
+        { "id": 3, "value": "Stylish and modern design" },
+        { "id": 4, "value": "Free from bugs and errors" }
+      ],
+      "required": false,
+      "error": "Choose at least one of the options above"
+    },
+    {
+      "id": 4,
+      "slug": "will_you_revisit",
+      "type": "grade",
+      "order": 3,
+      "title": "How likely are you to return to our service in the future?",
+      "options": [
+        { "id": 1, "value": 1 },
+        { "id": 2, "value": 2 },
+        { "id": 3, "value": 3 },
+        { "id": 4, "value": 4 },
+        { "id": 5, "value": 5 }
+      ],
+      "required": true,
+      "error": "Choose one of the above options"
+    },
+    {
+      "id": 5,
+      "slug": "customer_experience",
+      "type": "textarea",
+      "order": 4,
+      "title": "Tell us more about your experience",
+      "placeholder": "Describe things that were good, but also things that were less good",
+      "required": false,
+      "error": "You must fill in this field"
+    },
+    {
+      "id": 6,
+      "slug": "submit_button",
+      "type": "submit",
+      "title": "Submit",
+      "activeTitle": "Sending..."
+    }
+  ]
+}

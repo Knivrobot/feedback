@@ -1,5 +1,5 @@
 import { useState } from "react";
-import formBlueprint from "./formBluePrint.json";
+import formBlueprint from "./formBluePrint_en.json";
 import Form from "./Form/Form";
 import Confirmation from "./Form/Confirmation";
 
