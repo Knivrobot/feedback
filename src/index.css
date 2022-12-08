@@ -14,7 +14,7 @@ body {
 
 @media screen and (max-width: 1000px) {
   body {
-    padding: 5px 5px 50px;
+    padding: 5px 5px 100px;
     background-color: #002ba0;
   }
 }

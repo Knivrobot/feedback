@@ -13,7 +13,7 @@ function App() {
     setTimeout(() => {
       setFormContent(formValues);
       setSending(false);
-    }, 2000);
+    }, 1000);
   };
 
   return (

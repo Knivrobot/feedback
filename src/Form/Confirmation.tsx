@@ -42,7 +42,7 @@ function Confirmation({ formBlueprint, formContent, setFormContent }: Props) {
           Tack för din feedback, nu kan du stänga denna sida.
         </div>
         <button
-          className="w-full flex items-center justify-center  bg-white border border-gray-300 hover:bg-gray-50 focus:ring-4 focus:ring-blue-600 font-medium rounded-lg text-lg px-5 py-3  text-center mr-2   dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+          className="w-full flex appearance-none items-center justify-center  bg-white border border-gray-300 hover:bg-gray-50 focus:ring-4 focus:ring-blue-600 font-medium rounded-lg text-lg px-5 py-3  text-center mr-2   dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
           onClick={() => setFormContent(undefined)}
         >
           Återställ formuläret{" "}

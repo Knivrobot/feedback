@@ -5,7 +5,7 @@
 Open dev environment:
 
 ```
-git status
-git add
-git commit
+npm install
+npm run dev
+
 ```
